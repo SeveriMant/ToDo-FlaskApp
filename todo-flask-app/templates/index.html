@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+</head>
+<body>
+
+<h1>Todo List</h1>
+
+<form action="/add" method="post">
+    <input type="text" name="task" placeholder="Lisää tehtävä">
+    <button type="submit">Lisää</button>
+</form>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            {% if task.done %}
+                <s>{{ task.task }}</s> ✅
+            {% else %}
+                {{ task.task }}
+            {% endif %}
+
+            <a href="/complete/{{ loop.index0 }}">[Valmis]</a>
+            <a href="/delete/{{ loop.index0 }}">[Poista]</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
