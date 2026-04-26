@@ -9,7 +9,7 @@
 
 <form action="/add" method="post">
     <input type="text" name="task" placeholder="Lisää tehtävä">
-    <button type="submit">Lisää</button>
+    <button style="border-radius: 3px; width: 70px;" type="submit">Lisää</button>
 </form>
 
 <ul>
@@ -26,6 +26,11 @@
         </li>
     {% endfor %}
 </ul>
+
+<form action="/save" method="post">
+    <input type="text" name="filename" placeholder="Tiedostonimi (e.g., tasks.txt)" required>
+    <button style="border-radius: 3px; width: 70px;" type="submit">Tallenna</button>
+</form>
 
 </body>
 </html>
